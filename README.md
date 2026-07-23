@@ -137,3 +137,9 @@ helm install kubesage ./deploy/helm/kubesage
 - Built multi-source Kubernetes diagnostics for cluster, observability, GitOps, and infrastructure
 - Delivered repair recommendation generation for Helm, Terraform, GitHub Actions, and kubectl
 - Demonstrated cloud-native automation, CI/CD, and observability best practices
+
+---
+
+## Built By
+
+`KubeSage AI` was architected and scaffolded by **theycallmejc** to showcase platform engineering excellence in cloud-native infrastructure, DevOps automation, and enterprise-grade Kubernetes operations.
