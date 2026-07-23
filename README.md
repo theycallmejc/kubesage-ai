@@ -1,12 +1,12 @@
 ﻿# KubeSage AI
 
-AI-powered Kubernetes Platform Operations Engineer
+Infrastructure-first Kubernetes platform operations toolkit for DevOps and cloud engineering teams.
 
 ## Problem Statement
 
-Kubernetes incidents are complex and multi-dimensional. Platform teams struggle to connect pod failures, application logs, cluster health, policies, deployment drift, and observability signals into a single remediation path.
+Platform teams need a practical way to collect Kubernetes diagnostics, correlate infrastructure failures, and generate operational remediation guidance across GitOps, Terraform, CI/CD, and observability.
 
-`KubeSage AI` is a production-ready portfolio project designed to demonstrate enterprise-grade platform engineering for cloud-native operations. It combines Kubernetes diagnostics, AI-driven root cause analysis, RAG-based knowledge capture, and repair recommendations for infrastructure, CI/CD, Helm, and runbooks.
+`KubeSage AI` is a portfolio-grade platform engineering project built to demonstrate enterprise-ready DevOps capabilities for cloud-native operations. It combines Kubernetes diagnostics, model-assisted incident analysis, knowledge retrieval, and repair guidance for infrastructure, CI/CD, Helm, and runbooks.
 
 ## Architecture Overview
 
@@ -23,8 +23,8 @@ Kubernetes incidents are complex and multi-dimensional. Platform teams struggle 
 │  - FastAPI Orchestrator                                       │
 │  - Kubernetes Collector                                       │
 │  - Incident Correlation Engine                                │
-│  - AI Reasoning Engine (LangGraph / OpenRouter)               │
-│  - RAG Knowledge Store (ChromaDB / embeddings)               │
+│  - Incident Analysis Engine (LangGraph / OpenRouter)          │
+│  - Knowledge Store (ChromaDB / embeddings)                    │
 └──────────────┬─────────────────────────────────────┬─────────┘
                │                                     │
                │                                     │
@@ -34,11 +34,41 @@ Kubernetes incidents are complex and multi-dimensional. Platform teams struggle 
       └─────────────────┘                   └─────────────────┘
 ```
 
+## Workflow
+
+```text
+User triggers incident investigation
+            │
+            ▼
+Frontend dashboard sends request to backend API
+            │
+            ▼
+FastAPI orchestrator validates request and initializes pipeline
+            │
+            ▼
+Kubernetes Collector gathers pods, events, logs, services, HPA, ingress, ConfigMaps, Secrets metadata, PV/PVC
+            │
+            ▼
+Observability collector queries Prometheus, Grafana, Alertmanager, and cluster metrics
+            │
+            ▼
+Incident Correlation Engine links related failures and builds timeline
+            │
+            ▼
+Incident Analysis Engine uses model-assisted reasoning and knowledge retrieval
+            │
+            ▼
+Recommendation Engine generates kubectl, Helm, Terraform, GitHub Actions, and runbook guidance
+            │
+            ▼
+Dashboard displays incident summary, remediation options, and operational runbook
+```
+
 ## Features
 
 - Kubernetes incident investigation at enterprise scale
 - Multi-source evidence collection: pods, events, logs, deployments, HPA, ingress, services, ConfigMaps, Secrets metadata, node metrics, Prometheus, Grafana, Alertmanager, ArgoCD, Helm, Network Policies, PV/PVC
-- AI-driven root cause prioritization, correlated failure explanation, confidence scoring
+- Model-assisted root cause prioritization, correlated failure explanation, confidence scoring
 - Actionable repair guidance: kubectl commands, YAML patches, Helm releases, Terraform changes, GitHub Actions workflows
 - Runbook generation, postmortem summaries, incident timeline, and RCA documents
 - Clean architecture with domain-driven design, repository pattern, and dependency injection
@@ -132,8 +162,8 @@ helm install kubesage ./deploy/helm/kubesage
 
 ## Resume Highlights
 
-- Designed `KubeSage AI`, an enterprise-grade AI-driven Kubernetes platform operations product
-- Implemented clean architecture with FastAPI backend, React dashboard, and LangGraph-powered AI reasoning
+- Designed `KubeSage AI`, an enterprise-grade Kubernetes platform operations reference implementation
+- Implemented clean architecture with FastAPI backend, React dashboard, and model-assisted incident analysis
 - Built multi-source Kubernetes diagnostics for cluster, observability, GitOps, and infrastructure
 - Delivered repair recommendation generation for Helm, Terraform, GitHub Actions, and kubectl
 - Demonstrated cloud-native automation, CI/CD, and observability best practices
